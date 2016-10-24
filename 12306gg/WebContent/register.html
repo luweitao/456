@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册信息</title>
+		<link rel="stylesheet" type="text/css" href="css/user.css" />
+		<script language="JavaScript" type="text/javascript" src="js/laydate.js"></script>
+		
+		<!-- <script language="JavaScript" type="text/javascript">//用户名和身份证检查
+			function check(obj){
+				with(obj){
+					var nameReg=/^[a-zA-Z0-9]{1}([a-zA-Z0-9]|[._]){4,19}$/;
+					var cardnumReg=/^\d{15}$|^\d{18}$|^\d{17}[xX]$/;
+					if(!username.value.match(nameReg)){
+						alert("用户名不合法");
+						return false;
+					}
+					if(!cert.value.match(cardnumReg)){
+						alert("身份证号码不合法");
+						return false;
+					}
+					return true;
+				}
+			}
+		</script> -->
+	<!-- 	<script type="text/javascript" language="JavaScript">
+			//一维数组，表示省份
+			var provinces=new Array();
+			provinces[0]="辽宁省"
+			provinces[1]="吉林省"
+			provinces[2]="江苏省"
+			provinces[3]="福建省"
+			provinces[4]="广东省"
+			
+			//二位数组，表示省份的城市
+			var citys=new Array();
+			citys[0]=new Array();
+			citys[1]=new Array();
+			citys[2]=new Array();
+			citys[3]=new Array();
+			citys[4]=new Array();
+			citys[0][0]="沈阳市";
+			citys[0][1]="大连市";
+			citys[1][0]="长春市";
+			citys[1][1]="吉林市";
+			citys[2][0]="南京市";
+			citys[2][1]="无锡市";
+			citys[3][0]="福州市";
+			citys[3][1]="厦门市";
+			citys[3][2]="南平市";
+			citys[4][0]="广州市";
+			citys[4][1]="深圳市";
+			citys[4][2]="佛山市";
+			citys[4][3]="汕尾市";
+			//省份城市更改函数
+			function changeCity(){
+				var city=document.getElementById("city");
+				var province=document.getElementById("province");
+				city.options.length=0;//清空长度
+				//获取选择省份的value
+				var provalue=province.options[province.selectedIndex].value;
+				//从citys的二维数组中遍历构建options选项
+				for( var i=0;i<citys[provalue].length;i++){
+					var text=citys[provalue][i];
+					var value=i;
+					city.options[i]=new Option(text,value);
+				}
+			}
+		</script> -->
+	</head>
+	<body>
+		<form action="RegisterServlet"method="post">
+			<table>
+				<tr>
+					<td><div align="center">用户注册信息</div></td>
+				</tr>
+				<tr>
+					<td>注：标有<font color="#FF0000">*</font>处为必填项</td>
+				</tr>
+				<tr>
+					<td>登录信息：</td>
+				</tr>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>登录名：</td>
+								<td><input type="text" name="username" /> </td>
+								<td>以字母开头5-20位由字母、数字、“_”或“.”组成</td>
+							</tr>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>密码：</td>
+								<td><input type="password" name="password" /> </td>
+								<td>不少于6位字符</td>
+							</tr>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>确认密码：</td>
+								<td><input type="password" name="password2"/></td>
+								<td>再次输进密码</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>详细信息：</td>
+				</tr>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>真实姓名：</td>
+								<td><input type="text" name="realname" /> </td>
+							</tr>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>性别：</td>
+								<td>
+									<label><input type="radio" name="sex" checked="checked" value="0"/> 男</label>
+									<label><input type="radio" name="sex" value="1"/>女</label>
+								</td>
+							</tr>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>省份：</td>
+								<td>
+									<select name="province" id="province" class="text_cray">
+										<option >请选择省份</option>
+										<!-- <script language="JavaScript" type="text/javascript">
+											for(var i=0;i<provinces.length;i++){
+												document.write("<option value='"+i+"'>"+provinces[i]+"</option>");
+											}
+										</script> -->
+									</select>
+									城市：
+									<select name="city" id="city"class="text_cray" >
+										<option >请选择城市</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>证件类型：</td>
+								<td>
+									<select name="certType">
+										<option value="1"><span>二代身份证</span></option>
+										<option value="C"><span>港澳通行证</span></option>
+										<option value="G"><span>台湾通行证</span></option>
+										<option value="B"><span>护照</span></option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>证件号码：</td>
+								<td><input name="cert" type="text" /> </td>
+							</tr>
+							<tr>
+								<td><font color="#FF0000">*</font></td>
+								<td>出生日期：</td>
+								<td><input class="laydate-icon" name="birthday" id="demo" value="" /> </td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>旅客类型：</td>
+								<td>
+									<select name="userType">
+										<option value="1">成人</option>
+										<option value="2">儿童</option>
+										<option value="3">学生</option>
+										<option value="4">残疾军人，伤残人名警察</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td height="113">&nbsp;</td>
+								<td>备注：</td>
+								<td><textarea rows="8" name="content"></textarea></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td></td>
+								<td><input id="checkAgree" type="checkbox"/>
+								我已阅读并同意遵守
+								<a href="aa" target="_blank">《中国铁路客户服务中心网站服务条款》</a>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%">
+							<tr>
+								<td colspan="2" align="center"><input type="submit" value="注册" /> </td>
+								<td colspan="2" align="center"><div align="left"><input type="reset"  value="重置"/> </div></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript">
+        !function(){
+            laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+            laydate({elem: '#demo'});//绑定元素
+        }();
+        //日期范围限制
+        var start = {
+            elem: '#start',
+            format: 'YYYY-MM-DD',
+            min: laydate.now(), //设定最小日期为当前日期
+            max: '2099-06-16', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#end',
+            format: 'YYYY-MM-DD',
+            min: laydate.now(),
+            max: '2099-06-16',
+            istime: true,
+            istoday: false,
+            choose: function(datas){
+                start.max = datas; //结束日选好后，充值开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+        //自定义日期格式
+        laydate({
+            elem: '#test1',
+            format: 'YYYY年MM月DD日',
+            festival: true, //显示节日
+            choose: function(datas){ //选择日期完毕的回调
+                alert('得到：'+datas);
+            }
+        });
+        //日期范围限定在昨天到明天
+        laydate({
+            elem: '#hello3',
+            min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
+            max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
+        });
+    </script>
+    <script type="text/JavaScript" src="js/common.js"></script>
+	</body>
+</html>
