@@ -27,14 +27,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>12306购票系统</title>
 <link href="css/css.css" rel="stylesheel" type="text/css">
-	<script language="javascript">
+	<script language="javascript" type="text/javascript">
 		function UserRegistration(){
 			window.location.href = "register.html";
 		}
 	</script>
-	<script language="javascript">
+	<script language="javascript" type="text/javascript">
 			function reloadcode(){
-				document.getElementById("codeImg").src="code?"+new Date();
+				alert("wojdshfja");
+				document.getElementById("codeImg").src="ValidateCodeServlet?"+new Date();
 			}
 	</script>
 </head>
@@ -64,7 +65,7 @@
 							<tr>
 								<td>验证码</td>
 								<td><input type="text" name="code"/></td>
-								<td><img src="img/bg_img2.gif" alt="点击换一张" style="cursor:hand" onclick="javascript:reloadcode()"/></td>
+								<td><img id="codeImg"src="ValidateCodeServlet" alt="点击换一张" style="cursor:hand" onclick="javascript:reloadcode()"/></td>
 								<td><img src="img/text_sx.gif" onclick="javascript:reloadcode()"></td>
 							</tr>
 							<tr>

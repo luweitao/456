@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ValidateCodeServlet")
 public class ValidateCodeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
 	//使用的字符
 	private char code[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','p',
 			'q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','P',
