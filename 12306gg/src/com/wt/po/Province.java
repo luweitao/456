@@ -1,29 +1,25 @@
 package com.wt.po;
-/*省份实体类*/
+
+/**
+ * 省实体类
+ */
 public class Province {
-	/*ID*/
-	private Integer id;
-	
-	/*省份标识*/
-	private String provinceid;
-	
-	/*省份名称*/
+	/**
+	 * 省份标识
+	 */
+	private String provinceId;
+
+	/**
+	 * 省份名称
+	 */
 	private String province;
-	
-	public Integer getId() {
-		return id;
+
+	public String getProvinceId() {
+		return provinceId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getProvinceid() {
-		return provinceid;
-	}
-
-	public void setProvinceid(String provinceid) {
-		this.provinceid = provinceid;
+	public void setProvinceId(String provinceId) {
+		this.provinceId = provinceId;
 	}
 
 	public String getProvince() {
@@ -36,9 +32,8 @@ public class Province {
 
 	@Override
 	public String toString() {
-		return "Province [id=" + id + ", provinceid=" + provinceid
+		return "Province [ provinceId=" + provinceId
 				+ ", province=" + province + "]";
 	}
-	
-	
+
 }

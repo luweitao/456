@@ -1,11 +1,18 @@
 package com.wt.po;
 
-/*证件类型实体类*/
+/**
+ * 证件类型实体类
+ */
 public class CertType {
-	/*ID*/
+
+	/**
+	 * ID
+	 */
 	private Integer id;
-	
-	/*省份标识*/
+
+	/**
+	 * 证件类型
+	 */
 	private String content;
 
 	public Integer getId() {
@@ -28,6 +35,5 @@ public class CertType {
 	public String toString() {
 		return "CertType [id=" + id + ", content=" + content + "]";
 	}
-	
-	
+
 }

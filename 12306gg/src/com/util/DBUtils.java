@@ -3,6 +3,7 @@ package com.util;
 import java.rmi.ServerException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -79,7 +80,9 @@ public class DBUtils {
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			
+			DBUtils.closestatement(rs, sm);
 		}
 	}
+
+	
 }

@@ -2,76 +2,105 @@ package com.wt.po;
 
 import java.util.Date;
 
-//用户实体类
+/**
+ * 用户体类
+ */
 public class User {
 
-//	ID
+	/**
+	 * ID
+	 */
 	private Integer id;
-	
-//	用户名
+
+	/**
+	 * 用户名
+	 */
 	private String username;
-	
-//	密码
+
+	/**
+	 * 密码
+	 */
 	private String password;
-	
-//	确认密码
+
+	/**
+	 * 确认密码
+	 */
 	private String password2;
-	
-//	权限（1、管理员 2、普通用户）
+
+	/**
+	 * 原密码
+	 */
+	private String passwordOld;
+
+	/**
+	 * 权限(1、管理员 2、普通用户)
+	 */
 	private String rule;
-	
-//	真实姓名
+
+	/**
+	 * 真实姓名
+	 */
 	private String realname;
-	
-//	性别（0、男 1、女）
+
+	/**
+	 * 性别(1、男 2、女)
+	 */
 	private String sex;
-	
-//	城市信息
+
+	/**
+	 * 市信息
+	 */
 	private City city;
-	
-//	证件类型
+
+	/**
+	 * 证件类型
+	 */
 	private CertType certType;
-	
-//	证件号码
+
+	/**
+	 * 证件号码
+	 */
 	private String cert;
-	
-//	生日
+
+	/**
+	 * 生日
+	 */
 	private Date birthday;
-	
-//	旅客类型
+
+	/**
+	 * 旅客类型
+	 */
 	private UserType userType;
-	
-//	备注信息
+
+	/**
+	 * 备注信息
+	 */
 	private String content;
-	
-//	用户状态
+
+	/**
+	 * 用户状态（0、无效 1、有效 ）
+	 */
 	private String status;
-	
-//	登录IP
-	private String loginip;
-	
-//	用户头像路径
+
+	/**
+	 * 登陆IP
+	 */
+	private String loginIp;
+
+	/**
+	 * 用户头像路径
+	 */
 	private String imagePath;
-	
-	private String code;
-	
+
+	/**
+	 * 自动登陆
+	 */
 	private boolean autoLogin;
 
-	public boolean isAutoLogin() {
-		return autoLogin;
-	}
-
-	public void setAutoLogin(boolean autoLogin) {
-		this.autoLogin = autoLogin;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
+	/**
+	 * 验证码
+	 */
+	private String code;
 
 	public Integer getId() {
 		return id;
@@ -185,12 +214,12 @@ public class User {
 		this.status = status;
 	}
 
-	public String getLoginip() {
-		return loginip;
+	public String getLoginIp() {
+		return loginIp;
 	}
 
-	public void setLoginip(String loginip) {
-		this.loginip = loginip;
+	public void setLoginIp(String loginIp) {
+		this.loginIp = loginIp;
 	}
 
 	public String getImagePath() {
@@ -201,15 +230,40 @@ public class User {
 		this.imagePath = imagePath;
 	}
 
+	public boolean isAutoLogin() {
+		return autoLogin;
+	}
+
+	public void setAutoLogin(boolean autoLogin) {
+		this.autoLogin = autoLogin;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getPasswordOld() {
+		return passwordOld;
+	}
+
+	public void setPasswordOld(String passwordOld) {
+		this.passwordOld = passwordOld;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password="
-				+ password + ", password2=" + password2 + ", rule=" + rule
-				+ ", realname=" + realname + ", sex=" + sex + ", city=" + city
-				+ ", certType=" + certType + ", cert=" + cert + ", birthday="
-				+ birthday + ", userType=" + userType + ", content=" + content
-				+ ", status=" + status + ", loginip=" + loginip
-				+ ", imagePath=" + imagePath + "]";
+				+ password + ", password2=" + password2 + ", passwordOld="
+				+ passwordOld + ", rule=" + rule + ", realname=" + realname
+				+ ", sex=" + sex + ", city=" + city + ", certType=" + certType
+				+ ", cert=" + cert + ", birthday=" + birthday + ", userType="
+				+ userType + ", content=" + content + ", status=" + status
+				+ ", loginIp=" + loginIp + ", imagePath=" + imagePath
+				+ ", autoLogin=" + autoLogin + ", code=" + code + "]";
 	}
-	
+
 }

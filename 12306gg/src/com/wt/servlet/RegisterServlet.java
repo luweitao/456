@@ -110,7 +110,7 @@ public class RegisterServlet extends HttpServlet {
 		else if(TextUtils.isEmpty(user.getRealname())){
 			errorMsg="请输入真实姓名";
 		}
-		else if(user.getCity().getId()==null){
+		else if(user.getCity().getCityId()==null){
 			errorMsg="请选择所在城市";
 		}
 		else if(TextUtils.isEmpty(user.getCert())){
@@ -142,7 +142,7 @@ public class RegisterServlet extends HttpServlet {
 		String userTypeId=request.getParameter("userType");
 		String content=request.getParameter("content");
 		
-		user.setLoginip(loginIP);
+		user.setLoginIp(loginIP);
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setPassword2(password2);
@@ -150,8 +150,12 @@ public class RegisterServlet extends HttpServlet {
 		user.setSex(sex);
 		System.out.println(user.getSex());
 		/*City*/
-		City city=new City();
-		city.setId(Integer.parseInt(cityId));
+		City city = new City();
+		if(cityId == null || cityId.equals("城市")){
+			city.setCityId("");
+		}else{
+			city.setCityId(cityId);
+		}
 		user.setCity(city);
 		
 		/*CertType*/
